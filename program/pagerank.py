@@ -7,6 +7,13 @@ DAMPING = 0.85
 SAMPLES = 10000
 
 
+def crawl(directory):
+    """
+    Parse a directory of HTML pages and check for links to other pages.
+    Return a dictionary where each key is a page, and values are a list of all other pages in the corpus that are linked to by the page.
+    """
+    raise NotImplementedError
+
 def transition_model(corpus, page, damping_factor):
     """
     Return a probability distribution over which page to visit next, given a current page.
