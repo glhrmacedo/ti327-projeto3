@@ -14,6 +14,7 @@ def crawl(directory):
     """
     raise NotImplementedError
 
+
 def transition_model(corpus, page, damping_factor):
     """
     Return a probability distribution over which page to visit next, given a current page.
@@ -42,3 +43,16 @@ if __name__ == "__main__":
 
     if len(sys.argv) != 2:
         sys.exit("Usage: python pagerank.py corpus")
+
+    corpus = crawl(sys.argv[1])
+
+    print(f"PageRank Results from Sampling (n = {SAMPLES})")
+    ranks = sample_pagerank(corpus, DAMPING, SAMPLES)
+    for page in sorted(ranks):
+        print(f"  {page}: {ranks[page]:.4f}")    
+
+    print(f"PageRank Results from Iteration")
+    ranks = iterate_pagerank(corpus, DAMPING)
+    for page in sorted(ranks):
+        
+        print(f"  {page}: {ranks[page]:.4f}")   
