@@ -40,4 +40,5 @@ def iterate_pagerank(corpus, damping_factor):
 
 if __name__ == "__main__":
 
-    pass
+    if len(sys.argv) != 2:
+        sys.exit("Usage: python pagerank.py corpus")
