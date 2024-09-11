@@ -54,5 +54,4 @@ if __name__ == "__main__":
     print(f"PageRank Results from Iteration")
     ranks = iterate_pagerank(corpus, DAMPING)
     for page in sorted(ranks):
-        
         print(f"  {page}: {ranks[page]:.4f}")   
