@@ -6,6 +6,7 @@ import sys
 DAMPING = 0.85
 SAMPLES = 10000
 
+
 def transition_model(corpus, page, damping_factor):
     """
     Return a probability distribution over which page to visit next, given a current page.
